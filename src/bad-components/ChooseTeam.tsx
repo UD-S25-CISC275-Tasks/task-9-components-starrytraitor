@@ -24,9 +24,14 @@ export function ChooseTeam(): React.JSX.Element {
         setTeam([]);
     }
 
+    function killTeam() {
+        setAllOptions([]);
+    }
+
     return (
         <div>
             <h3>Choose Team</h3>
+            <Button onClick={() => killTeam}>Kill Team</Button>
             <Row>
                 <Col>
                     {allOptions.map((option: string) => (
