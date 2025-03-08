@@ -11,7 +11,7 @@ const PEOPLE = [
 ];
 
 export function ChooseTeam(): React.JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    const [allOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(newMember: string) {
@@ -24,14 +24,9 @@ export function ChooseTeam(): React.JSX.Element {
         setTeam([]);
     }
 
-    function killTeam() {
-        setAllOptions([]);
-    }
-
     return (
         <div>
             <h3>Choose Team</h3>
-            <Button onClick={() => killTeam}>Kill Team</Button>
             <Row>
                 <Col>
                     {allOptions.map((option: string) => (
